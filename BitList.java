@@ -28,7 +28,13 @@ public class BitList {
     }
 
     public BitList( String s ) {
-        throw new UnsupportedOperationException( "not implemented yet!" );
+        if ( s == null ) {
+            throw new IllegalArgumentException( "null string" );
+        }
+        for (int i=0; i<s.length(); i++) {
+            int bit = s.charAt(i) - '0';
+            addFirst(bit); 
+        }
     }
 
     public void addFirst( int bit ) {
